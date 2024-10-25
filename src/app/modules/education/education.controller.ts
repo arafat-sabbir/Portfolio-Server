@@ -41,8 +41,35 @@ const createEducation = catchAsync(async (req: Request, res: Response) => {
 });
 
 
+
+const editEducation = catchAsync(async (req: Request, res: Response) => {
+  const { id } = req.params;
+  // Call the service method to update the education by ID and get the result
+  const result = await educationServices.editEducation(id, req.body);
+  // Send a success response with the updated resource data
+  sendResponse(res, {
+    message: 'Education Updated Successfully',
+    data: result,
+  });
+});
+
+
+
+const deleteEducation = catchAsync(async (req: Request, res: Response) => {
+  const { id } = req.params;
+  // Call the service method to delete the education by ID and get the result
+  const result = await educationServices.deleteEducation(id);
+  // Send a success response with the deleted resource data
+  sendResponse(res, {
+    message: 'Education Deleted Successfully',
+    data: result,
+  });
+});
+
 export const educationControllers = {
   createEducation,
   getSingleEducation,
   getAllEducation,
+  editEducation,
+  deleteEducation
 }

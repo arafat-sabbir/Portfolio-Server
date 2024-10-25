@@ -1,3 +1,6 @@
-export interface TEducation {
-  // Add fields as needed
-}
+export type TEducation = {
+  instituteName: string;
+  degreeName: string;
+  startDate: Date;
+  endDate: Date;
+};

@@ -22,7 +22,12 @@ router.get('/:id', experienceControllers.getSingleExperience);
 
 router.get('/', experienceControllers.getAllExperience);
 
-router.put('/:id', AuthorizeRequest(), experienceControllers.editExperience);
+router.put(
+  '/:id',
+  AuthorizeRequest(),
+  validateRequest(experienceValidation.editExperienceSchema),
+  experienceControllers.editExperience
+);
 
 router.delete('/:id', AuthorizeRequest(), experienceControllers.deleteExperience);
 

@@ -10,6 +10,17 @@ const createExperienceSchema = z.object({
   }),
 });
 
+// Validation Schema For editExperience
+const editExperienceSchema = z.object({
+  body: z.object({
+    companyName: z.string().optional(),
+    position: z.string().optional(),
+    startDate: z.date().optional(),
+    endDate: z.date().optional(),
+  }).partial(),
+});
+
 export const experienceValidation = {
   createExperienceSchema,
+  editExperienceSchema
 };
