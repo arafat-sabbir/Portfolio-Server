@@ -41,8 +41,32 @@ const createExperience = catchAsync(async (req: Request, res: Response) => {
 });
 
 
+const editExperience = catchAsync(async (req: Request, res: Response) => {
+  const { id } = req.params;
+  // Call the service method to update the experience by ID and get the result
+  const result = await experienceServices.editExperience(id, req.body);
+  // Send a success response with the updated resource data
+  sendResponse(res, {
+    message: 'Experience Updated Successfully',
+    data: result,
+  });
+});
+
+const deleteExperience = catchAsync(async (req: Request, res: Response) => {
+  const { id } = req.params;
+  // Call the service method to delete the experience by ID and get the result
+  const result = await experienceServices.deleteExperience(id);
+  // Send a success response with the deleted resource data
+  sendResponse(res, {
+    message: 'Experience Deleted Successfully',
+    data: result,
+  });
+});
+
 export const experienceControllers = {
   createExperience,
   getSingleExperience,
   getAllExperience,
+  editExperience,
+  deleteExperience
 }

@@ -5,14 +5,25 @@ import { TExperience } from './experience.interface';
 
 // Define the Experience schema
 const ExperienceSchema: Schema<TExperience> = new Schema({
-  // Define schema fields here
-  // Example fields (replace with actual schema)
-  // fieldName: {
-  //   type: Schema.Types.FieldType,
-  //   required: true,
-  //   trim: true,
-  // },
-},{timestamps:true,versionKey:false});
+  companyName: {
+    type: String,
+    required: [true, 'Company Name is required'],
+    trim: true,
+  },
+  position: {
+    type: String,
+    required: [true, 'Position is required'],
+    trim: true,
+  },
+  startDate: {
+    type: Date,
+    required: [true, 'Start Date is required'],
+  },
+  endDate: {
+    type: Date,
+    required: [true, 'End Date is required'],
+  },
+}, { timestamps: true, versionKey: false });
 
 // Create the Experience model
 const ExperienceModel = mongoose.model<TExperience>('Experience', ExperienceSchema);

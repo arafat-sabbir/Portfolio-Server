@@ -1,3 +1,6 @@
 export interface TExperience {
-  // Add fields as needed
+  companyName: string;
+  position: string;
+  startDate: Date;
+  endDate: Date;
 }
