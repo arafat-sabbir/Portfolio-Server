@@ -15,6 +15,7 @@ const router = Router();
 
 router.post(
   '',
+  AuthorizeRequest(),
   upload.single('photo'),
   convertFilePath,
   (req: Request, res: Response, next: NextFunction) => {

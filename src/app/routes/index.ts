@@ -1,6 +1,9 @@
 import { Router } from 'express';
 import userRoutes from '../modules/user/user.route';
 import blogRoutes from '../modules/blog/blog.route';
+import experienceRoutes from '../modules/experience/experience.route';
+import educationRoutes from '../modules/education/education.route';
+import skillRoutes from '../modules/skill/skill.route';
 
 const router = Router();
 
@@ -12,6 +15,18 @@ const routes = [
   {
     path: '/blogs',
     route: blogRoutes,
+  },
+  {
+    path: '/educations',
+    route: educationRoutes,
+  },
+  {
+    path: '/experiences',
+    route: experienceRoutes,
+  },
+  {
+    path: '/skills',
+    route: skillRoutes,
   },
 ];
 

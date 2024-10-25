@@ -14,7 +14,7 @@ const router = Router();
 router.post(
   '/',
   AuthorizeRequest(),
-  validateRequest(experienceValidation.createExperienceSchema),
+  validateRequest(experienceValidation.createExperienceSchema,true),
   experienceControllers.createExperience
 );
 
@@ -22,10 +22,10 @@ router.get('/:id', experienceControllers.getSingleExperience);
 
 router.get('/', experienceControllers.getAllExperience);
 
-router.put(
+router.patch(
   '/:id',
   AuthorizeRequest(),
-  validateRequest(experienceValidation.editExperienceSchema),
+  validateRequest(experienceValidation.editExperienceSchema,true),
   experienceControllers.editExperience
 );
 

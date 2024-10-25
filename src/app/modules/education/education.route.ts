@@ -14,7 +14,7 @@ const router = Router();
 router.post(
   '/',
   AuthorizeRequest(),
-  validateRequest(educationValidation.createEducationSchema),
+  validateRequest(educationValidation.createEducationSchema, true),
   educationControllers.createEducation
 );
 
@@ -25,7 +25,7 @@ router.get('/', educationControllers.getAllEducation);
 router.patch(
   '/:id',
   AuthorizeRequest(),
-  validateRequest(educationValidation.editEducationSchema),
+  validateRequest(educationValidation.editEducationSchema, true),
   educationControllers.editEducation
 );
 

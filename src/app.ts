@@ -26,8 +26,9 @@ const formatDate = (date: Date) => {
 const requestLogger = (req: Request, res: Response, next: NextFunction) => {
   const method = req.method;
   const url = req.url;
-  const query = JSON.stringify(req.query, null, 2); // Log query
-  const params = JSON.stringify(req.params, null, 2); // Log params
+  const query = JSON.stringify(req.query, null, 2);  // Log query parameters
+  const params = JSON.stringify(req.params, null, 2); // Log route parameters
+  const body = JSON.stringify(req.body, null, 2); // Log request body
   const formattedDate = formatDate(new Date());
 
   console.log('------------------------');
@@ -36,10 +37,12 @@ const requestLogger = (req: Request, res: Response, next: NextFunction) => {
   );
   console.log('Query:', query); // Log the query
   console.log('Params:', params); // Log the params
+  console.log('Body:', body); // Log the body
   console.log('------------------------');
 
   next();
 };
+
 
 
 // Middleware setup
