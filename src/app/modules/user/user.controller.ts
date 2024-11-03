@@ -14,7 +14,6 @@ const createUser = catchAsync(async (req: Request, res: Response) => {
   });
 });
 
-
 // Controller function to handle Login
 const loginUser = catchAsync(async (req: Request, res: Response) => {
   // Call the service method to create a new user and get the result
@@ -26,9 +25,29 @@ const loginUser = catchAsync(async (req: Request, res: Response) => {
   });
 });
 
+const getUser = catchAsync(async (req: Request, res: Response) => {
+  // Call the service method to get multiple user based on query parameters and get the result
+  const result = await userServices.getUser();
+  // Send a success response with the retrieved resources data
+  sendResponse(res, {
+    message: 'Users Retrieved Successfully',
+    data: result,
+  });
+});
 
+const updateUser = catchAsync(async (req: Request, res: Response) => {
+  // Call the service method to update the user by ID and get the result
+  const result = await userServices.updateUser(req.body);
+  // Send a success response with the updated resource data
+  sendResponse(res, {
+    message: 'Admin Updated Successfully',
+    data: result,
+  });
+});
 
 export const userControllers = {
   createUser,
-  loginUser
+  getUser,
+  loginUser,
+  updateUser
 };

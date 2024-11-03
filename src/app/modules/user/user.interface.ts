@@ -7,9 +7,12 @@
 export interface TUser {
   name: string;
   email: string;
+  displayEmail:string;
   password: string;
   photo: string;
-  isVerified: boolean;
-  role:"user" | "admin"
+  designation: string;
+  location:string;
+  dob:string;
+  phone:string
 }
 

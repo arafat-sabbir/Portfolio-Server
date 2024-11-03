@@ -24,7 +24,7 @@ const globalErrorHandler: ErrorRequestHandler = (
   res: Response<TGenericErrorResponse>,
   next
 ) => {
-  console.log(next);
+  console.log(error);
   // Set default values for status code, message, and error sources.
   let statusCode = 500;
   let stack = null;

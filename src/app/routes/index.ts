@@ -4,12 +4,13 @@ import blogRoutes from '../modules/blog/blog.route';
 import experienceRoutes from '../modules/experience/experience.route';
 import educationRoutes from '../modules/education/education.route';
 import skillRoutes from '../modules/skill/skill.route';
+import portfolioRoutes from '../modules/portfolio/portfolio.route';
 
 const router = Router();
 
 const routes = [
   {
-    path: '/users',
+    path: '/user',
     route: userRoutes,
   },
   {
@@ -27,6 +28,10 @@ const routes = [
   {
     path: '/skills',
     route: skillRoutes,
+  },
+  {
+    path: '/portfolios',
+    route: portfolioRoutes,
   },
 ];
 

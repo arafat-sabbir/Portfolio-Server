@@ -22,7 +22,22 @@ const UserSchema: Schema<TUser> = new Schema(
     },
     photo: {
       type: String,
-    }
+    },
+    location: {
+      type: String,
+    },
+    designation: {
+      type: String,
+    },
+    dob: {
+      type: String,
+    },
+    phone: {
+      type: String,
+    },
+    displayEmail: {
+      type: String,
+    },
   },
   { timestamps: true, versionKey: false }
 );
@@ -32,4 +47,3 @@ const UserModel = mongoose.model<TUser>('User', UserSchema);
 
 // Export the User model
 export default UserModel;
-
