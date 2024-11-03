@@ -12,7 +12,7 @@ import bcrypt from 'bcrypt';
 // Service function to create a new user.
 
 const createUser = async (payload: TUser) => {
-  const { password, email, ...data } = payload;
+  const { password, ...data } = payload;
   const existingUser = await UserModel.findOne();
   if (existingUser) throw new Error('Admin Already Exists');
   const hashedPassword = await hashInfo(password);
@@ -48,7 +48,7 @@ const getUser = async () => {
 };
 
 const updateUser = async (payload: TUser) => {
-  const { password, ...data } = payload;
+  const { password,email, ...data } = payload;
   let updatedData: Partial<TUser> = {};
 
   Object.keys(data).forEach((key) => {
