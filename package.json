@@ -10,7 +10,8 @@
     "lint:fix": "npx eslint src --fix",
     "prettier": "prettier --ignore-path .gitignore --write \"./src/**/*.+(js|ts|json)\"",
     "prettier:fix": "npx prettier --write src",
-    "resource": "node ./.bin/cli.js resource"
+    "resource": "node ./.bin/cli.js resource",
+    "start": "node dist/server.js"
   },
   "keywords": [],
   "author": "",
