@@ -5,6 +5,7 @@ import experienceRoutes from '../modules/experience/experience.route';
 import educationRoutes from '../modules/education/education.route';
 import skillRoutes from '../modules/skill/skill.route';
 import portfolioRoutes from '../modules/portfolio/portfolio.route';
+import socialRoutes from '../modules/social/social.route';
 
 const router = Router();
 
@@ -33,6 +34,10 @@ const routes = [
     path: '/portfolios',
     route: portfolioRoutes,
   },
+  {
+    path: '/socials',
+    route: socialRoutes,
+  }
 ];
 
 routes.forEach((route) => router.use(route.path, route.route));
