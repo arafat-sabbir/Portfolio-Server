@@ -7,12 +7,13 @@
 export interface TUser {
   name: string;
   email: string;
-  displayEmail:string;
+  displayEmail: string;
   password: string;
   photo: string;
   designation: string;
-  location:string;
-  dob:string;
-  phone:string
+  location: string;
+  dob: string;
+  phone: string;
+  locationLink: string;
+  bio: string;
 }
-

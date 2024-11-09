@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable @typescript-eslint/no-explicit-any */
 // Import the model
 import config from '../../config';
 import deleteFile from '../../utils/deleteImage';
@@ -48,7 +47,7 @@ const getUser = async () => {
 };
 
 const updateUser = async (payload: TUser) => {
-  const { password,email, ...data } = payload;
+  const { password, email, ...data } = payload;
   let updatedData: Partial<TUser> = {};
 
   Object.keys(data).forEach((key) => {

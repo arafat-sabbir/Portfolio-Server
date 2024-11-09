@@ -38,6 +38,12 @@ const UserSchema: Schema<TUser> = new Schema(
     displayEmail: {
       type: String,
     },
+    bio: {
+      type: String,
+    },
+    locationLink: {
+      type: String,
+    },
   },
   { timestamps: true, versionKey: false }
 );

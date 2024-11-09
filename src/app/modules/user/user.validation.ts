@@ -63,6 +63,8 @@ const updateUserSchema = z.object({
       dob: z.string().optional(),
       phone: z.string().optional(),
       displayEmail: z.string().optional(),
+      bio: z.string().optional(),
+      locationLink: z.string().optional(),
     })
     .partial(),
 });
