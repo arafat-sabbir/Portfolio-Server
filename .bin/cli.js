@@ -86,13 +86,13 @@ import { ${resourceName}Validation } from './${resourceName}.validation';
 // Initialize router
 const router = Router();
 
-router.post("/}",validateRequest(${resourceName}Validation.create${capitalizedResourceName}Schema), ${resourceName}Controllers.create${capitalizedResourceName});
+router.post("/",validateRequest(${resourceName}Validation.create${capitalizedResourceName}Schema), ${resourceName}Controllers.create${capitalizedResourceName});
 
 
 router.get("/",${resourceName}Controllers.getAll${capitalizedResourceName});
 
 
-router.get("/",${resourceName}Controllers.getSingle${capitalizedResourceName});
+router.get("/:id",${resourceName}Controllers.getSingle${capitalizedResourceName});
 
 const ${resourceName}Routes = router;
 export default ${resourceName}Routes;

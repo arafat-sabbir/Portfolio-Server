@@ -5,13 +5,10 @@ import { TClient } from './client.interface';
 
 // Define the Client schema
 const ClientSchema: Schema<TClient> = new Schema({
-  // Define schema fields here
-  // Example fields (replace with actual schema)
-  // fieldName: {
-  //   type: Schema.Types.FieldType,
-  //   required: true,
-  //   trim: true,
-  // },
+  photo: {
+    type: String,
+    required: true
+  }
 },{timestamps:true,versionKey:false});
 
 // Create the Client model

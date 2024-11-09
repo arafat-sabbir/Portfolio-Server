@@ -6,6 +6,7 @@ import educationRoutes from '../modules/education/education.route';
 import skillRoutes from '../modules/skill/skill.route';
 import portfolioRoutes from '../modules/portfolio/portfolio.route';
 import socialRoutes from '../modules/social/social.route';
+import clientRoutes from '../modules/client/client.route';
 
 const router = Router();
 
@@ -37,7 +38,11 @@ const routes = [
   {
     path: '/socials',
     route: socialRoutes,
-  }
+  },
+  {
+    path: '/clients',
+    route: clientRoutes,
+  },
 ];
 
 routes.forEach((route) => router.use(route.path, route.route));
