@@ -49,9 +49,25 @@ const updateClient = catchAsync(async (req: Request, res: Response) => {
   });
 });
 
+
+
+const deleteClient = catchAsync(async (req: Request, res: Response) => {
+  const { id } = req.params;
+  // Call the service method to delete the client by ID and get the result
+  const result = await clientServices.deleteClient(id);
+  // Send a success response with the deleted resource data
+  sendResponse(res, {
+    message: 'Client Deleted Successfully',
+    data: result,
+  });
+});
+
+
+
 export const clientControllers = {
   createClient,
   getSingleClient,
   getAllClient,
   updateClient,
+  deleteClient
 };

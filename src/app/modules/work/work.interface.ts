@@ -1,3 +1,6 @@
 export interface TWork {
-  // Add fields as needed
+  title: string;
+  description: string;
+  photo: string;
 }
+

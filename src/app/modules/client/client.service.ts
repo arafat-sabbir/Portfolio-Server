@@ -37,10 +37,22 @@ const updateClient = async (id: string, payload: TClient) => {
   return updatedClient;
 };
 
+const deleteClient = async (id: string) => {
+  const client = await ClientModel.findById(id);
+  if (!client) {
+    throw new Error('Client not found');
+  }
+  if (client.photo) {
+    deleteFile(client.photo);
+  }
+  return await ClientModel.findByIdAndDelete(id);
+};
+
 export const clientServices = {
   createClient,
   getClientById,
   getAllClient,
   updateClient,
+  deleteClient
 };
 
