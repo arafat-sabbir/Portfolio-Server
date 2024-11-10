@@ -4,9 +4,9 @@ import { Router } from 'express';
 
 // Import controller from corresponding module
 import { experienceControllers } from './experience.controller';
-import validateRequest from '../../middlewares/validateRequest';
 import { experienceValidation } from './experience.validation';
-import AuthorizeRequest from '../../middlewares/auth';
+import AuthorizeRequest from '../../../middlewares/auth';
+import validateRequest from '../../../middlewares/validateRequest';
 
 // Initialize router
 const router = Router();

@@ -1,5 +1,6 @@
 // Import the model
-import deleteFile from '../../utils/deleteImage';
+
+import deleteFile from '../../../utils/deleteImage';
 import { TClient } from './client.interface';
 import ClientModel from './client.model';
 

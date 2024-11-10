@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import { workServices } from './work.service';
-import catchAsync from '../../utils/catchAsync';
-import sendResponse from '../../utils/sendResponse';
+import catchAsync from '../../../utils/catchAsync';
+import sendResponse from '../../../utils/sendResponse';
 
 // Controller function to handle the creation of a single Work.
 const createWork = catchAsync(async (req: Request, res: Response) => {
@@ -64,6 +64,6 @@ export const workControllers = {
   getSingleWork,
   getAllWork,
   editWork,
-  deleteWork
+  deleteWork,
 };
 

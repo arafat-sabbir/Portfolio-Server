@@ -3,7 +3,7 @@ import catchAsync from '../utils/catchAsync';
 import AppError from '../errors/AppError';
 import jwt, { JwtPayload } from 'jsonwebtoken';
 import config from '../config';
-import UserModel from '../modules/user/user.model';
+import UserModel from '../modules/user/user/user.model';
 
 /**
  * Middleware to authorize requests.

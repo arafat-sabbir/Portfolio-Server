@@ -1,13 +1,14 @@
 import { Router } from 'express';
-import userRoutes from '../modules/user/user.route';
+import userRoutes from '../modules/user/user/user.route';
 import blogRoutes from '../modules/blog/blog.route';
-import experienceRoutes from '../modules/experience/experience.route';
-import educationRoutes from '../modules/education/education.route';
-import skillRoutes from '../modules/skill/skill.route';
+import educationRoutes from '../modules/resume/education/education.route';
+import experienceRoutes from '../modules/resume/experience/experience.route';
+import skillRoutes from '../modules/resume/skill/skill.route';
 import portfolioRoutes from '../modules/portfolio/portfolio.route';
-import socialRoutes from '../modules/social/social.route';
-import clientRoutes from '../modules/client/client.route';
-import workRoutes from '../modules/work/work.route';
+import socialRoutes from '../modules/user/social/social.route';
+import clientRoutes from '../modules/about/client/client.route';
+import workRoutes from '../modules/about/work/work.route';
+import { resumeRoutes } from '../modules/resume/resume.route';
 
 const router = Router();
 
@@ -47,6 +48,10 @@ const routes = [
   {
     path: '/works',
     route: workRoutes,
+  },
+  {
+    path: '/resumes',
+    route: resumeRoutes,
   },
 ];
 

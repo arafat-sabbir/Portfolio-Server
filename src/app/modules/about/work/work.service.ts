@@ -1,5 +1,5 @@
 // Import the model
-import deleteFile from '../../utils/deleteImage';
+import deleteFile from '../../../utils/deleteImage';
 import { TWork } from './work.interface';
 import WorkModel from './work.model';
 

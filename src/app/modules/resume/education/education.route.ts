@@ -4,9 +4,9 @@ import { Router } from 'express';
 
 // Import controller from corresponding module
 import { educationControllers } from './education.controller';
-import validateRequest from '../../middlewares/validateRequest';
 import { educationValidation } from './education.validation';
-import AuthorizeRequest from '../../middlewares/auth';
+import AuthorizeRequest from '../../../middlewares/auth';
+import validateRequest from '../../../middlewares/validateRequest';
 
 // Initialize router
 const router = Router();

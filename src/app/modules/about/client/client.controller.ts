@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import { clientServices } from './client.service';
-import catchAsync from '../../utils/catchAsync';
-import sendResponse from '../../utils/sendResponse';
+import catchAsync from '../../../utils/catchAsync';
+import sendResponse from '../../../utils/sendResponse';
 
 // Controller function to handle the creation of a single Client.
 const createClient = catchAsync(async (req: Request, res: Response) => {
@@ -49,8 +49,6 @@ const updateClient = catchAsync(async (req: Request, res: Response) => {
   });
 });
 
-
-
 const deleteClient = catchAsync(async (req: Request, res: Response) => {
   const { id } = req.params;
   // Call the service method to delete the client by ID and get the result
@@ -62,12 +60,11 @@ const deleteClient = catchAsync(async (req: Request, res: Response) => {
   });
 });
 
-
-
 export const clientControllers = {
   createClient,
   getSingleClient,
   getAllClient,
   updateClient,
-  deleteClient
+  deleteClient,
 };
+

@@ -3,10 +3,10 @@ import { Router } from 'express';
 
 // Import controller from corresponding module
 import { clientControllers } from './client.controller';
-import validateRequest from '../../middlewares/validateRequest';
 import { clientValidation } from './client.validation';
-import uploadSinglePhoto from '../../utils/uploadSinglePhoto';
-import AuthorizeRequest from '../../middlewares/auth';
+import uploadSinglePhoto from '../../../utils/uploadSinglePhoto';
+import validateRequest from '../../../middlewares/validateRequest';
+import AuthorizeRequest from '../../../middlewares/auth';
 
 
 

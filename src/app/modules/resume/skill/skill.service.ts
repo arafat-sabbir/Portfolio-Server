@@ -1,5 +1,5 @@
 // Import the model
-import deleteFile from '../../utils/deleteImage';
+import deleteFile from '../../../utils/deleteImage';
 import { TSkill } from './skill.interface';
 import SkillModel from './skill.model';
 

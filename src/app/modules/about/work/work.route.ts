@@ -4,11 +4,10 @@ import { Router } from 'express';
 
 // Import controller from corresponding module
 import { workControllers } from './work.controller';
-import validateRequest from '../../middlewares/validateRequest';
 import { workValidation } from './work.validation';
-import AuthorizeRequest from '../../middlewares/auth';
-import uploadSinglePhoto from '../../utils/uploadSinglePhoto';
-
+import uploadSinglePhoto from '../../../utils/uploadSinglePhoto';
+import validateRequest from '../../../middlewares/validateRequest';
+import AuthorizeRequest from '../../../middlewares/auth';
 // Initialize router
 const router = Router();
 

@@ -1,11 +1,11 @@
 // Import Router from express
 import { NextFunction, Request, Response, Router } from 'express';
 import { userControllers } from './user.controller';
-import validateRequest from '../../middlewares/validateRequest';
+import validateRequest from '../../../middlewares/validateRequest';
 import { userValidation } from './user.validation';
-import AuthorizeRequest from '../../middlewares/auth';
-import { upload } from '../../utils/multer';
-import convertFilePath from '../../utils/convertFilePath';
+import AuthorizeRequest from '../../../middlewares/auth';
+import { upload } from '../../../utils/multer';
+import convertFilePath from '../../../utils/convertFilePath';
 
 // Import controller from corresponding module
 

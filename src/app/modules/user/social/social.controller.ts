@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import { socialServices } from './social.service';
-import catchAsync from '../../utils/catchAsync';
-import sendResponse from '../../utils/sendResponse';
+import catchAsync from '../../../utils/catchAsync';
+import sendResponse from '../../../utils/sendResponse';
 
 // Controller function to handle the creation of a single Social.
 const createSocial = catchAsync(async (req: Request, res: Response) => {

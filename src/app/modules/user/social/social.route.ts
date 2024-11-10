@@ -4,8 +4,8 @@ import { Router } from 'express';
 
 // Import controller from corresponding module
 import { socialControllers } from './social.controller';
-import validateRequest from '../../middlewares/validateRequest';
 import { socialValidation } from './social.validation';
+import validateRequest from '../../../middlewares/validateRequest';
 
 // Initialize router
 const router = Router();

@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 // Import the model
-import config from '../../config';
-import deleteFile from '../../utils/deleteImage';
-import generateToken from '../../utils/generateToken';
-import { hashInfo } from '../../utils/hashInfo';
+import config from '../../../config';
+import deleteFile from '../../../utils/deleteImage';
+import generateToken from '../../../utils/generateToken';
+import { hashInfo } from '../../../utils/hashInfo';
 import { TUser } from './user.interface';
 import UserModel from './user.model';
 import bcrypt from 'bcrypt';

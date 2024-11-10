@@ -4,11 +4,11 @@ import { NextFunction, Request, Response, Router } from 'express';
 
 // Import controller from corresponding module
 import { skillControllers } from './skill.controller';
-import validateRequest from '../../middlewares/validateRequest';
 import { skillValidation } from './skill.validation';
-import AuthorizeRequest from '../../middlewares/auth';
-import { upload } from '../../utils/multer';
-import convertFilePath from '../../utils/convertFilePath';
+import AuthorizeRequest from '../../../middlewares/auth';
+import { upload } from '../../../utils/multer';
+import convertFilePath from '../../../utils/convertFilePath';
+import validateRequest from '../../../middlewares/validateRequest';
 
 // Initialize router
 const router = Router();
