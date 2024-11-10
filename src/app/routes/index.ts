@@ -7,6 +7,7 @@ import skillRoutes from '../modules/skill/skill.route';
 import portfolioRoutes from '../modules/portfolio/portfolio.route';
 import socialRoutes from '../modules/social/social.route';
 import clientRoutes from '../modules/client/client.route';
+import workRoutes from '../modules/work/work.route';
 
 const router = Router();
 
@@ -42,6 +43,10 @@ const routes = [
   {
     path: '/clients',
     route: clientRoutes,
+  },
+  {
+    path: '/works',
+    route: workRoutes,
   },
 ];
 
