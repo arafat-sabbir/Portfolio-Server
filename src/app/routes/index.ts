@@ -9,6 +9,7 @@ import socialRoutes from '../modules/user/social/social.route';
 import clientRoutes from '../modules/about/client/client.route';
 import workRoutes from '../modules/about/work/work.route';
 import { resumeRoutes } from '../modules/resume/resume.route';
+import { aboutRoutes } from '../modules/about/about.route';
 
 const router = Router();
 
@@ -52,6 +53,10 @@ const routes = [
   {
     path: '/resumes',
     route: resumeRoutes,
+  },
+  {
+    path: '/about',
+    route: aboutRoutes,
   },
 ];
 
