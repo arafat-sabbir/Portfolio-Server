@@ -24,7 +24,7 @@ router.post(
 //Login User
 router.post('/login', validateRequest(userValidation.loginUserSchema), userControllers.loginUser);
 
-router.get('/me', AuthorizeRequest(), userControllers.getUser);
+router.get('/me', userControllers.getUser);
 
 router.patch(
   '/update',
