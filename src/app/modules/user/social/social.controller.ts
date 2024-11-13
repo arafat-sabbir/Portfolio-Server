@@ -47,10 +47,22 @@ const editSocial = catchAsync(async (req: Request, res: Response) => {
   });
 });
 
+const deleteSocial = catchAsync(async (req: Request, res: Response) => {
+  const { id } = req.params;
+  // Call the service method to delete the social by ID and get the result
+  const result = await socialServices.deleteSocial(id);
+  // Send a success response with the deleted resource data
+  sendResponse(res, {
+    message: 'Social Deleted Successfully',
+    data: result,
+  });
+});
+
 export const socialControllers = {
   createSocial,
   getSingleSocial,
   getAllSocial,
   editSocial,
+  deleteSocial
 };
 

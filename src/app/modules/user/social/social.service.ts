@@ -22,10 +22,15 @@ const editSocial = async (payload: TSocial) => {
   return await SocialModel.findOneAndUpdate({ name: payload.name }, payload, { new: true });
 };
 
+const deleteSocial = async (id: string) => {
+  return await SocialModel.findByIdAndDelete(id);
+};
+
 export const socialServices = {
   createSocial,
   getSocialById,
   getAllSocial,
   editSocial,
+  deleteSocial
 };
 

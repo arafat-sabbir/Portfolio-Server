@@ -6,6 +6,7 @@ import { Router } from 'express';
 import { socialControllers } from './social.controller';
 import { socialValidation } from './social.validation';
 import validateRequest from '../../../middlewares/validateRequest';
+import AuthorizeRequest from '../../../middlewares/auth';
 
 // Initialize router
 const router = Router();
@@ -20,7 +21,14 @@ router.get('/', socialControllers.getAllSocial);
 
 router.get('/', socialControllers.getSingleSocial);
 
-router.patch('/', validateRequest(socialValidation.editSocialValidationSchema), socialControllers.editSocial);
+router.patch(
+  '/',
+  validateRequest(socialValidation.editSocialValidationSchema),
+  socialControllers.editSocial
+);
+
+router.delete('/:id', AuthorizeRequest(), socialControllers.deleteSocial);
 
 const socialRoutes = router;
 export default socialRoutes;
+
