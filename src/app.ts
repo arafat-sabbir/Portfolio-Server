@@ -48,7 +48,7 @@ const requestLogger = (req: Request, res: Response, next: NextFunction) => {
 // Middleware setup
 app.use(
   cors({
-    origin: ['http://localhost:5173'],
+    origin: ["https://portfolio.finaltry-innovations.site"],
     credentials: true,
   })
 );
