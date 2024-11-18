@@ -4,10 +4,10 @@ import ClientModel from './client/client.model';
 import WorkModel from './work/work.model';
 
 const getAboutContent = async () => {
-  const { bio } = (await UserModel.findOne()) as TUser;
+  const user = (await UserModel.findOne()) as TUser;
   const clients = await ClientModel.find();
   const works = await WorkModel.find();
-  return { bio, clients, works };
+  return { bio: user?.bio || '', clients, works };
 };
 
 export const aboutServices = {
