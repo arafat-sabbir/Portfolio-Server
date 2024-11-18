@@ -1,5 +1,4 @@
 // Import the model
-import deleteFile from '../../../utils/deleteImage';
 import { TSkill } from './skill.interface';
 import SkillModel from './skill.model';
 
@@ -25,9 +24,6 @@ const editSkill = async (id: string, payload: Partial<TSkill>) => {
   if (!skill) {
     throw new Error('Skill not found');
   }
-  if (skill.photo) {
-    deleteFile(skill.photo);
-  }
   let updatedData: Partial<TSkill> = {};
   Object.keys(payload).forEach((key) => {
     // Ensure key is of type keyof TSkill and payload[key] is not undefined
@@ -46,9 +42,6 @@ const deleteSkill = async (id: string) => {
   const skill = await SkillModel.findById(id);
   if (!skill) {
     throw new Error('Skill not found');
-  }
-  if (skill.photo) {
-    deleteFile(skill.photo);
   }
   return await SkillModel.findByIdAndDelete(id);
 };
