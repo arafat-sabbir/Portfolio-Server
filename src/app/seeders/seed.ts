@@ -10,7 +10,16 @@ import EducationModel from '../modules/resume/education/education.model';
 import ExperienceModel from '../modules/resume/experience/experience.model';
 import SkillModel from '../modules/resume/skill/skill.model';
 import SocialModel from '../modules/user/social/social.model';
-import UserModel from '../modules/user/user/user.model';
+import {
+  blogData,
+  clientData,
+  educationData,
+  experienceData,
+  portfolioData,
+  skillData,
+  socialData,
+  workData,
+} from '../data/seed';
 
 interface ModelData<T> {
   model: Model<T>;
@@ -18,15 +27,14 @@ interface ModelData<T> {
 }
 
 const models: ModelData<any>[] = [
-  { model: ClientModel, data: [] },
-  { model: WorkModel, data: [] },
-  { model: BlogModel, data: [] },
-  { model: PortfolioModel, data: [] },
-  { model: EducationModel, data: [] },
-  { model: ExperienceModel, data: [] },
-  { model: SkillModel, data: [] },
-  { model: SocialModel, data: [] },
-  { model: UserModel, data: [] },
+  { model: ClientModel, data: clientData },
+  { model: WorkModel, data: workData },
+  { model: BlogModel, data: blogData },
+  { model: PortfolioModel, data: portfolioData },
+  { model: EducationModel, data: educationData },
+  { model: ExperienceModel, data: experienceData },
+  { model: SkillModel, data: skillData },
+  { model: SocialModel, data: socialData },
 ];
 
 export const seedDatabase = async () => {

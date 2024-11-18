@@ -14,10 +14,7 @@ const SkillSchema: Schema<TSkill> = new Schema(
     level: {
       type: Number,
       required: [true, 'Skill level is required'],
-    },
-    photo: {
-      type: String,
-    },
+    }
   },
   { timestamps: true, versionKey: false }
 );
