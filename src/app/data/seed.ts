@@ -177,7 +177,7 @@ export const blogData: TBlog[] = [
       <h3>🎯 Conclusion</h3>
       <p>Mobile app development is an ever-evolving field, offering endless opportunities for innovation. By adopting cutting-edge technologies and focusing on user experience, developers can create apps that truly make a difference.</p>
     `,
-    photo: '/uploads/mobile_app_development.jpg',
+    photo: '/uploads/mobile-app.jpg',
   },
   {
     title: 'Backend Development with Modern Tools',
