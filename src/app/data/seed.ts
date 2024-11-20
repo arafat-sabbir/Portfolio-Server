@@ -107,43 +107,99 @@ export const socialData: TSocial[] = [
 
 export const portfolioData: TPortfolio[] = [
   {
-    title: 'Echo Estate (Real Estate)',
+    title: 'Echo Estate',
     category: 'Real Estate Website',
     description: 'A Good Project WIth Various Rules',
     technologiesUsed: ['react', 'firebase', 'mongodb', 'mongoose', 'tailwind css', 'typescript'],
     features: ['Has Various Dashboard For Various User', 'Admin Can Block A Agent'],
     livePreview: 'https://echo-state.web.app/',
     sourceCode: 'https://echo-state.web.app/',
-    thumbnail: '/uploads/photo-1730609730807-516621179.png',
+    thumbnail: '/uploads/echo-estate.png',
     reviews: [],
     startDate: new Date('2013-12-31'),
     endDate: 'undefined' as any,
     currentlyWorking: true,
   },
+  {
+    title: 'FinalTry Innovations',
+    category: 'Portfolio Website',
+    description: 'A Portfolio Website For finalTry-innovations.site',
+    technologiesUsed: ['next js', 'framer-motion', 'tailwind css', 'typescript'],
+    features: ['User Can Book Appointment With The Admin Through The Website'],
+    livePreview: 'https://finaltry-innovations.site/',
+    sourceCode: 'https://github.com/arafat-sabbir/FinalTry-Innovation.git',
+    thumbnail: '/uploads/finaltry-innovations.png',
+    reviews: [],
+    startDate: new Date('2024-7-1'),
+    endDate: new Date('2024-10-1'),
+    currentlyWorking: false,
+  },
 ];
 
 export const blogData: TBlog[] = [
   {
-    title: 'Mobile App Development with Flutter',
+    title: 'Mobile App Development',
     category: 'Mobile App Development',
+    content: `
+      <h2>Mobile App Development: Transforming Ideas into Seamless Experiences</h2>
+      <p>Mobile app development has become a cornerstone of the digital age, shaping how businesses and individuals interact with technology. With the rise of smartphones and tablets, creating intuitive, efficient, and visually appealing mobile applications is more critical than ever.</p>
+
+      <h3>🌟 Why Mobile App Development Matters</h3>
+      <p>Mobile apps provide a direct way to engage with users, offering convenience, accessibility, and personalized experiences. Whether it's for e-commerce, social media, healthcare, or entertainment, a well-designed app can significantly impact user engagement and business growth.</p>
+
+      <h3>🔧 Key Technologies in Mobile App Development</h3>
+      <ul>
+        <li><b>Flutter:</b> 🖥 A game-changing framework for developing cross-platform apps with a single codebase, ensuring consistent performance across Android and iOS.</li>
+        <li><b>Firebase:</b> 📡 A backend-as-a-service (BaaS) offering real-time databases, authentication, and cloud storage, making app development faster and more efficient.</li>
+        <li><b>Dart:</b> 📝 The programming language behind Flutter, known for its simplicity and performance optimization.</li>
+      </ul>
+
+      <h3>🛠 The Development Process</h3>
+      <ol>
+        <li><b>Ideation and Planning:</b> 🎯 Understanding client requirements, target audience, and market trends.</li>
+        <li><b>Design:</b> 🎨 Crafting user-centric UI/UX designs to enhance the user experience.</li>
+        <li><b>Development:</b> 💻 Writing clean and maintainable code using modern frameworks like Flutter.</li>
+        <li><b>Testing:</b> 🧪 Ensuring the app is bug-free and performs well across various devices.</li>
+        <li><b>Deployment and Maintenance:</b> 🚀 Publishing the app on platforms like Google Play and Apple App Store, followed by continuous updates and support.</li>
+      </ol>
+
+      <h3>🚀 Trends Shaping Mobile App Development</h3>
+      <ul>
+        <li><b>Cross-Platform Development:</b> 🔄 Reducing development time and cost by creating apps for multiple platforms with a single codebase.</li>
+        <li><b>AI Integration:</b> 🤖 Adding intelligent features like chatbots, recommendation engines, and predictive analysis.</li>
+        <li><b>IoT and Wearables:</b> 🌐 Connecting apps with IoT devices to offer a seamless smart experience.</li>
+        <li><b>AR/VR:</b> 🌍 Leveraging augmented reality (AR) and virtual reality (VR) to create immersive user experiences.</li>
+      </ul>
+
+      <h3>⚠ Challenges and Solutions</h3>
+      <p>Developing a mobile app comes with challenges, including device compatibility, security concerns, and performance optimization. Using the right tools, frameworks, and methodologies ensures these hurdles are addressed effectively.</p>
+
+      <h3>🎯 Conclusion</h3>
+      <p>Mobile app development is an ever-evolving field, offering endless opportunities for innovation. By adopting cutting-edge technologies and focusing on user experience, developers can create apps that truly make a difference.</p>
+    `,
+    photo: '/uploads/mobile_app_development.jpg',
+  },
+  {
+    title: 'Backend Development with Modern Tools',
+    category: 'Backend Development',
     content: `
       <h2>Backend Development: Building the Foundation for Scalable Apps</h2>
       <p>Backend development is the backbone of modern applications, handling everything from data storage to user authentication. A robust backend ensures that an app runs smoothly, securely, and efficiently.</p>
 
-      <h3>Why Backend Development Matters</h3>
+      <h3>🔧 Why Backend Development Matters</h3>
       <p>The backend is where all the essential business logic takes place, including data management, user interactions, and server-side operations. A well-structured backend can improve performance, scalability, and security, providing a seamless experience for users.</p>
 
-      <h3>Key Technologies in Backend Development</h3>
+      <h3>🛠 Key Technologies in Backend Development</h3>
       <ul>
-        <li>Python (Flask): A lightweight and flexible web framework for building secure APIs and backend systems quickly and efficiently.</li>
-        <li>Node.js: A JavaScript runtime that enables building fast, scalable server-side applications using JavaScript.</li>
-        <li>Django: A high-level Python framework that encourages rapid development of secure, maintainable websites and APIs.</li>
-        <li>MySQL/PostgreSQL: Relational databases that store and organize data for easy retrieval and management.</li>
-        <li>MongoDB: A NoSQL database designed for scalability and high performance with large volumes of data.</li>
-        <li>Redis: A key-value store used for caching, improving the performance of data-intensive applications.</li>
+        <li><b>Python (Flask):</b> 🐍 A lightweight and flexible web framework for building secure APIs and backend systems quickly and efficiently.</li>
+        <li><b>Node.js:</b> 🚀 A JavaScript runtime that enables building fast, scalable server-side applications using JavaScript.</li>
+        <li><b>Django:</b> 🌐 A high-level Python framework that encourages rapid development of secure, maintainable websites and APIs.</li>
+        <li><b>MySQL/PostgreSQL:</b> 🗄 Relational databases that store and organize data for easy retrieval and management.</li>
+        <li><b>MongoDB:</b> 📝 A NoSQL database designed for scalability and high performance with large volumes of data.</li>
+        <li><b>Redis:</b> ⚡ A key-value store used for caching, improving the performance of data-intensive applications.</li>
       </ul>
 
-      <h3>The Development Process</h3>
+      <h3>🛠 The Development Process</h3>
       <ol>
         <li>Requirement Gathering and Planning</li>
         <li>Database Design</li>
@@ -153,20 +209,21 @@ export const blogData: TBlog[] = [
         <li>Deployment and Maintenance</li>
       </ol>
 
-      <h3>Trends Shaping Backend Development</h3>
+      <h3>🚀 Trends Shaping Backend Development</h3>
       <ul>
-        <li>Microservices Architecture: Breaking down monolithic applications into smaller, independent services that can be developed, deployed, and scaled separately.</li>
-        <li>Serverless Computing: Reducing infrastructure management by running backend functions on-demand without managing servers.</li>
-        <li>GraphQL: Providing a flexible API query language that allows clients to request only the data they need, optimizing performance.</li>
-        <li>Containerization (Docker): Packaging applications and services into containers for easier deployment and scaling across different environments.</li>
+        <li><b>Microservices Architecture:</b> 🔧 Breaking down monolithic applications into smaller, independent services that can be developed, deployed, and scaled separately.</li>
+        <li><b>Serverless Computing:</b> ☁ Reducing infrastructure management by running backend functions on-demand without managing servers.</li>
+        <li><b>GraphQL:</b> 📈 Providing a flexible API query language that allows clients to request only the data they need, optimizing performance.</li>
+        <li><b>Containerization (Docker):</b> 📦 Packaging applications and services into containers for easier deployment and scaling across different environments.</li>
       </ul>
 
-      <h3>Challenges and Solutions</h3>
+      <h3>⚠ Challenges and Solutions</h3>
       <p>Backend development faces challenges like maintaining performance under heavy traffic, managing data consistency, and securing sensitive information. Using the right tools and frameworks, along with proper monitoring and testing, ensures the system is reliable and efficient.</p>
 
-      <h3>Conclusion</h3>
+      <h3>🎯 Conclusion</h3>
       <p>Backend development is essential for creating powerful, scalable applications. With the right technologies, practices, and design patterns, developers can ensure their apps run securely, efficiently, and are ready to scale as user demands grow.</p>
     `,
     photo: '/uploads/backend_development.jpg',
   },
 ];
+
