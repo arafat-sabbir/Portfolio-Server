@@ -61,28 +61,28 @@ export const educationData: TEducation[] = [
 
 export const workData: TWork[] = [
   {
-    photo: '/uploads/mobile.png',
-    title: 'Creating Modern Apps',
+    photo: '/uploads/coding.png',
+    title: 'Web Design and Development',
     description:
-      'Building responsive and high-performing mobile applications with Flutter for Android and iOS platforms.',
+      'Designing responsive, user-friendly websites with sleek interfaces and robust functionality tailored to client needs.',
   },
   {
-    photo: '/uploads/server.png',
-    title: 'API and Server Solutions',
+    photo: '/uploads/mobile-development.png',
+    title: 'Mobile App Development',
     description:
-      'Developing secure and scalable backend systems using Python Flask and Firebase for smooth app functionality.',
+      'Building cross-platform mobile applications with a focus on performance, scalability, and excellent user experience.',
   },
   {
-    photo: '/uploads/design.png',
-    title: 'Designing User-Centric Interfaces',
+    photo: '/uploads/backend.png',
+    title: 'Backend Development',
     description:
-      'Integrating intuitive and visually appealing designs to enhance user experiences in every project.',
+      ' Developing secure and scalable APIs and server-side systems for seamless app performance and data handling.',
   },
   {
-    photo: '/uploads/guide.png',
-    title: 'Guiding Future Developers',
+    photo: '/uploads/software-development.png',
+    title: 'Software Development',
     description:
-      'Offering consultancy and training sessions on Flutter development and best practices for app creation.',
+      'Offering technical consultancy to optimize software projects and resolve complex development challenges efficiently',
   },
 ];
 
@@ -226,4 +226,3 @@ export const blogData: TBlog[] = [
     photo: '/uploads/backend_development.jpg',
   },
 ];
-
