@@ -93,6 +93,7 @@ export const clientData: TClient[] = [
   { photo: '/uploads/client3.png' },
   { photo: '/uploads/client4.png' },
   { photo: '/uploads/client5.png' },
+  { photo: '/uploads/client6.png' },
 ];
 
 export const socialData: TSocial[] = [
