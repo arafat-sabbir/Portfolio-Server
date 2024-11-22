@@ -7,6 +7,7 @@ import { TEducation } from '../modules/resume/education/education.interface';
 import { TExperience } from '../modules/resume/experience/experience.interface';
 import { TSkill } from '../modules/resume/skill/skill.interface';
 import { TSocial } from '../modules/user/social/social.interface';
+import { TUser } from '../modules/user/user/user.interface';
 
 export const skillData: TSkill[] = [
   { skill: 'Flutter', level: 90 },
@@ -226,3 +227,16 @@ export const blogData: TBlog[] = [
     photo: '/uploads/backend_development.jpg',
   },
 ];
+
+export const userData: Partial<TUser> = {
+  name: 'John Doe',
+  displayEmail: 'john.doe@example.com',
+  photo: '/uploads/default.jpg',
+  designation: 'Software Engineer',
+  location: 'New York, USA',
+  dob: '1990-01-01',
+  phone: '+1234567890',
+  locationLink:
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.758141454425!2d-73.98511368447915!3d40.75796487910715!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083d%3A0xc80b8f06e177fe62!2sNew+York%2C+NY%2C+USA!5e0!3m2!1sen!2sbd!4v1568925944964!5m2!1sen!2sbd',
+  bio: 'I am John Doe, a Software Engineer with experience in developing web applications using cutting-edge technologies. I am skilled in both front-end and back-end development and have a strong passion for learning and innovation.',
+};

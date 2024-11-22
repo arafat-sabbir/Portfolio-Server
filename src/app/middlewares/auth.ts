@@ -3,7 +3,7 @@ import catchAsync from '../utils/catchAsync';
 import AppError from '../errors/AppError';
 import jwt, { JwtPayload } from 'jsonwebtoken';
 import config from '../config';
-import UserModel from '../modules/user/user/user.model';
+import AdminModel from '../modules/admin/admin.model';
 
 /**
  * Middleware to authorize requests.
@@ -24,14 +24,14 @@ const AuthorizeRequest = (...roles: string[]) => {
       req.user = decoded;
       const { id, role, iat } = decoded;
       if (roles.length > 0 && !roles.includes(decoded?.role)) {
-        throw new AppError(401, 'Unauthorized Access');
+        throw new AppError(401, 'Unauthorized Access2');
       }
-      const user = await UserModel.findById(id);
-      if (!user) {
-        throw new Error('User not found');
+      const admin = await AdminModel.findById(id);
+      if (!admin) {
+        throw new Error('Admin not found');
       }
     } catch (error: any) {
-      throw new AppError(401, 'Unauthorized Access');
+      throw new AppError(401, 'Unauthorized Access3');
     }
     next();
   });

@@ -15,14 +15,7 @@ import convertFilePath from '../../../utils/convertFilePath';
 const router = Router();
 
 // Register A New User
-router.post(
-  '/register',
-  validateRequest(userValidation.createUserSchema),
-  userControllers.createUser
-);
 
-//Login User
-router.post('/login', validateRequest(userValidation.loginUserSchema), userControllers.loginUser);
 
 router.get('/me', userControllers.getUser);
 

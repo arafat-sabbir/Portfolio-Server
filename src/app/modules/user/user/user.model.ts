@@ -1,4 +1,6 @@
-import mongoose, { Schema } from 'mongoose';
+import mongoose, { Schema, Model } from 'mongoose';
+
+
 import { TUser } from './user.interface';
 
 // Define an interface representing a User document
@@ -7,16 +9,6 @@ import { TUser } from './user.interface';
 const UserSchema: Schema<TUser> = new Schema(
   {
     name: {
-      type: String,
-      required: true,
-    },
-    email: {
-      type: String,
-      required: true,
-      unique: true,
-      trim: true,
-    },
-    password: {
       type: String,
       required: true,
     },
@@ -48,8 +40,10 @@ const UserSchema: Schema<TUser> = new Schema(
   { timestamps: true, versionKey: false }
 );
 
+
 // Create the User model
-const UserModel = mongoose.model<TUser>('User', UserSchema);
+const UserModel: Model<TUser> = mongoose.model<TUser>('User', UserSchema);
 
 // Export the User model
 export default UserModel;
+

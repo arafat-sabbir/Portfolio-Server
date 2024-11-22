@@ -1,11 +1,20 @@
 import express, { Application, NextFunction, Request, Response } from 'express';
 import cors from 'cors';
 import allRoutes from './app/routes';
-import path from "path"
+import path from 'path';
 import globalErrorHandler from './app/middlewares/globalErrorHandler';
+import * as nodemailer from 'nodemailer';
 
 const app: Application = express();
 
+// Nodemailer transporter configuration
+export const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASSWORD,
+  },
+});
 
 // Middleware setup
 
@@ -26,7 +35,7 @@ const formatDate = (date: Date) => {
 const requestLogger = (req: Request, res: Response, next: NextFunction) => {
   const method = req.method;
   const url = req.url;
-  const query = JSON.stringify(req.query, null, 2);  // Log query parameters
+  const query = JSON.stringify(req.query, null, 2); // Log query parameters
   const params = JSON.stringify(req.params, null, 2); // Log route parameters
   const body = JSON.stringify(req.body, null, 2); // Log request body
   const formattedDate = formatDate(new Date());
@@ -43,12 +52,10 @@ const requestLogger = (req: Request, res: Response, next: NextFunction) => {
   next();
 };
 
-
-
 // Middleware setup
 app.use(
   cors({
-    origin: ["https://portfolio.finaltry-innovations.site"],
+    origin: ['https://portfolio.finaltry-innovations.site'],
     credentials: true,
   })
 );

@@ -10,6 +10,7 @@ import clientRoutes from '../modules/about/client/client.route';
 import workRoutes from '../modules/about/work/work.route';
 import { resumeRoutes } from '../modules/resume/resume.route';
 import { aboutRoutes } from '../modules/about/about.route';
+import adminRoutes from '../modules/admin/admin.route';
 
 const router = Router();
 
@@ -57,6 +58,10 @@ const routes = [
   {
     path: '/about',
     route: aboutRoutes,
+  },
+  {
+    path: '/admin',
+    route: adminRoutes,
   },
 ];
 

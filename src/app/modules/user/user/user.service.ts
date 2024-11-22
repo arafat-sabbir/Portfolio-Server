@@ -1,82 +1,44 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 // Import the model
-import config from '../../../config';
 import deleteFile from '../../../utils/deleteImage';
-import generateToken from '../../../utils/generateToken';
-import { hashInfo } from '../../../utils/hashInfo';
 import { TUser } from './user.interface';
 import UserModel from './user.model';
-import bcrypt from 'bcrypt';
-
-// Service function to create a new user.
-
-const createUser = async (payload: TUser) => {
-  const { password, ...data } = payload;
-  const existingUser = await UserModel.findOne();
-  if (existingUser) throw new Error('Admin Already Exists');
-  const hashedPassword = await hashInfo(password);
-  const newUser = await UserModel.create({ password: hashedPassword, ...data });
-  return newUser;
-};
-
-// Service function to Login User And Return A Token
-
-const loginUser = async (payload: { email: string; password: string }) => {
-  const user = await UserModel.findOne({ email: payload.email });
-  if (!user) {
-    throw new Error('User not found');
-  }
-
-  const isMatch = bcrypt.compareSync(payload.password, user.password);
-  if (!isMatch) {
-    throw new Error('Incorrect Password Try Again');
-  }
-
-  const token = await generateToken(
-    { id: user._id, role: 'admin' },
-    config.jwt_access_secret as string,
-    config.jwt_access_expires as string
-  );
-  return { token };
-};
-
-// Service function to retrieve a single user by ID.
-
-const getUser = async () => {
-  return await UserModel.findOne();
-};
 
 const updateUser = async (payload: TUser) => {
-  const { password, email, ...data } = payload;
-  let updatedData: Partial<TUser> = {};
+  const updatedData: Partial<TUser> = {};
 
-  Object.keys(data).forEach((key) => {
+  // Filter out undefined, null, and empty string values
+  Object.keys(payload).forEach((key) => {
     const typedKey = key as keyof TUser;
     if (payload[typedKey] !== undefined && payload[typedKey] !== null && payload[typedKey] !== '') {
-      updatedData = { ...updatedData, [typedKey]: (data as TUser)[typedKey] };
+      updatedData[typedKey] = payload[typedKey];
     }
   });
 
-  const user = await UserModel.findOne();
-  if (!user) {
-    throw new Error('No Admin found');
-  }
+  // Check if a user exists
+  const existingUser = await UserModel.findOne();
 
-  // If a photo exists, delete it
-  if (user.photo) {
-    deleteFile(user.photo);
+  if (existingUser) {
+    // If a photo exists, delete the old one
+    if (existingUser.photo && updatedData.photo) {
+      deleteFile(existingUser.photo);
+    }
+    // Update the existing user
+    const updatedUser = await UserModel.findOneAndUpdate({}, updatedData, { new: true });
+    return updatedUser;
+  } else {
+    // Create a new user with the provided data
+    const newUser = new UserModel(updatedData);
+    await newUser.save();
+    return newUser;
   }
-
-  // Spread `updatedData` so the fields are updated correctly
-  const updatedUser = await UserModel.findOneAndUpdate({}, updatedData, { new: true });
-  return updatedUser;
 };
 
-// Service function to retrieve multiple user based on query parameters.
-
+// Service function to retrieve a single user by ID.
+const getUser = async () => {
+  return await UserModel.findOne();
+};
 export const userServices = {
-  createUser,
-  getUser,
-  loginUser,
   updateUser,
+  getUser,
 };

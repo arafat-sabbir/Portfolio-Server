@@ -6,7 +6,6 @@
  */
 export interface TUser {
   name: string;
-  email: string;
   displayEmail: string;
   password: string;
   photo: string;
