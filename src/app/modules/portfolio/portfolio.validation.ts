@@ -9,7 +9,6 @@ const createPortfolioSchema = z.object({
     technologiesUsed: z.array(z.string()).min(1, { message: 'At least one technology is required' }),
     features: z.array(z.string()).min(1, { message: 'At least one feature is required' }),
     livePreview: z.string().url().optional(),
-    sourceCode: z.string().url(),
     thumbnail: z.string({required_error: 'Thumbnail is required'}),
     startDate: z.date().optional(),
     endDate: z.date().optional(),

@@ -11,6 +11,7 @@ import workRoutes from '../modules/about/work/work.route';
 import { resumeRoutes } from '../modules/resume/resume.route';
 import { aboutRoutes } from '../modules/about/about.route';
 import adminRoutes from '../modules/admin/admin.route';
+import categoriesRoutes from '../modules/categories/categories.route';
 
 const router = Router();
 
@@ -62,6 +63,10 @@ const routes = [
   {
     path: '/admin',
     route: adminRoutes,
+  },
+  {
+    path: '/categories',
+    route: categoriesRoutes,
   },
 ];
 

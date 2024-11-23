@@ -61,7 +61,7 @@ const createAdmin = async (payload: TAdmin) => {
 const loginAdmin = async (payload: { email: string; password: string }) => {
   const user = await AdminModel.findOne({ email: payload.email });
   if (!user) {
-    throw new Error('Admin not found');
+    throw new Error('Invalid Email Address Try Again');
   }
   if (!user.isVerified) {
     throw new Error('Admin is not verified');

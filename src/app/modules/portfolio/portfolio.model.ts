@@ -33,11 +33,6 @@ const PortfolioSchema: Schema<TPortfolio> = new Schema(
       type: String,
       trim: true,
     },
-    sourceCode: {
-      type: String,
-      required: [true, 'Source Code Link is required'],
-      trim: true,
-    },
     thumbnail: {
       type: String,
       required: [true, 'Thumbnail is required'],
