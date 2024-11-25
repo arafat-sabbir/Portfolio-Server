@@ -7,7 +7,6 @@
 export interface TUser {
   name: string;
   displayEmail: string;
-  password: string;
   photo: string;
   designation: string;
   location: string;

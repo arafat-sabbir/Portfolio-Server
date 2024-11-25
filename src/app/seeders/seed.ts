@@ -18,8 +18,10 @@ import {
   portfolioData,
   skillData,
   socialData,
+  userData,
   workData,
 } from '../data/seed';
+import UserModel from '../modules/user/user/user.model';
 
 interface ModelData<T> {
   model: Model<T>;
@@ -35,6 +37,7 @@ const models: ModelData<any>[] = [
   { model: ExperienceModel, data: experienceData },
   { model: SkillModel, data: skillData },
   { model: SocialModel, data: socialData },
+  { model: UserModel, data: userData },
 ];
 
 export const seedDatabase = async () => {

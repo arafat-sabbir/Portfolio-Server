@@ -115,7 +115,6 @@ export const portfolioData: TPortfolio[] = [
     technologiesUsed: ['react', 'firebase', 'mongodb', 'mongoose', 'tailwind css', 'typescript'],
     features: ['Has Various Dashboard For Various User', 'Admin Can Block A Agent'],
     livePreview: 'https://echo-state.web.app/',
-    sourceCode: 'https://echo-state.web.app/',
     thumbnail: '/uploads/echo-estate.png',
     reviews: [],
     startDate: new Date('2013-12-31'),
@@ -129,7 +128,6 @@ export const portfolioData: TPortfolio[] = [
     technologiesUsed: ['next js', 'framer-motion', 'tailwind css', 'typescript'],
     features: ['User Can Book Appointment With The Admin Through The Website'],
     livePreview: 'https://finaltry-innovations.site/',
-    sourceCode: 'https://github.com/arafat-sabbir/FinalTry-Innovation.git',
     thumbnail: '/uploads/finaltry-innovations.png',
     reviews: [],
     startDate: new Date('2024-7-1'),
@@ -229,15 +227,17 @@ export const blogData: TBlog[] = [
   },
 ];
 
-export const userData: Partial<TUser> = {
-  name: 'John Doe',
-  displayEmail: 'john.doe@example.com',
-  photo: '/uploads/default.jpg',
-  designation: 'Software Engineer',
-  location: 'New York, USA',
-  dob: '1990-01-01',
-  phone: '+1234567890',
-  locationLink:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.758141454425!2d-73.98511368447915!3d40.75796487910715!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083d%3A0xc80b8f06e177fe62!2sNew+York%2C+NY%2C+USA!5e0!3m2!1sen!2sbd!4v1568925944964!5m2!1sen!2sbd',
-  bio: 'I am John Doe, a Software Engineer with experience in developing web applications using cutting-edge technologies. I am skilled in both front-end and back-end development and have a strong passion for learning and innovation.',
-};
+export const userData: TUser[] = [
+  {
+    name: 'John Doe',
+    displayEmail: 'john.doe@example.com',
+    photo: '/uploads/user.png',
+    designation: 'Software Engineer',
+    location: 'New York, USA',
+    dob: '1990-01-01',
+    phone: '+1234567890',
+    locationLink:
+      'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.758141454425!2d-73.98511368447915!3d40.75796487910715!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083d%3A0xc80b8f06e177fe62!2sNew+York%2C+NY%2C+USA!5e0!3m2!1sen!2sbd!4v1568925944964!5m2!1sen!2sbd',
+    bio: 'I am John Doe, a Software Engineer with experience in developing web applications using cutting-edge technologies. I am skilled in both front-end and back-end development and have a strong passion for learning and innovation.',
+  },
+];
