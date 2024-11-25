@@ -31,19 +31,9 @@ const sendOtp = async ({ email, otp }: { email: string; otp: number | string }) 
                 <div style="margin: 20px auto; padding: 15px 30px; background-color: #F1F8FF; border: 2px dashed #F96815; border-radius: 8px; display: inline-block; font-size: 24px; font-weight: bold; color: #F96815;">
                   ${otp}
                 </div>
-                <p style="margin: 20px 0; font-size: 14px; color: #888;">
-                  This OTP is valid for 10 minutes. Do not share this code with anyone.
-                </p>
               </td>
             </tr>
             <!-- Call to Action -->
-            <tr>
-              <td style="padding: 20px; text-align: center;">
-                <a href="#" style="display: inline-block; padding: 12px 24px; background-color: #F96815; color: #ffffff; text-decoration: none; border-radius: 6px; font-size: 16px; font-weight: bold; transition: background-color 0.3s;">
-                  Verify Now
-                </a>
-              </td>
-            </tr>
           </tbody>
           <!-- Footer -->
           <tfoot>
