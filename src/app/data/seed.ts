@@ -229,7 +229,7 @@ export const blogData: TBlog[] = [
 
 export const userData: TUser[] = [
   {
-    name: 'John Doe',
+    name: 'John Doe Example',
     displayEmail: 'john.doe@example.com',
     photo: '/uploads/user.png',
     designation: 'Software Engineer',
