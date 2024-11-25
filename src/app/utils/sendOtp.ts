@@ -40,7 +40,7 @@ const sendOtp = async ({ email, otp }: { email: string; otp: number | string }) 
             <tr>
               <td style="background-color: #f4f4f4; padding: 15px; text-align: center; font-size: 12px; color: #888;">
                 <p style="margin: 0;">Need help? Contact us at <a href="mailto:finaltryinnovations@gmail.com" style="color: #F96815; text-decoration: none;">finaltryinnovations@gmail.com</a>.</p>
-                <p style="margin: 10px 0;">&copy; 2024 Your Company. All rights reserved.</p>
+                <p style="margin: 10px 0;">&copy; 2024 FinalTry Innovations. All rights reserved.</p>
                 <p style="margin: 0; font-size: 10px; color: #aaa;">Chittagong,Bangladesh</p>
               </td>
             </tr>
