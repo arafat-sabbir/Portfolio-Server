@@ -13,4 +13,4 @@ const handleZodError = (err: ZodError) => {
     errorSources,
   };
 };
-exports.default = handleZodError;
+export default handleZodError;

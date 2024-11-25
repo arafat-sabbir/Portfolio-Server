@@ -40,7 +40,7 @@ const globalErrorHandler: ErrorRequestHandler = (
   if (error instanceof ZodError) {
     const simplifiedError = handleZodError(error);
     statusCode = simplifiedError?.statusCode;
-    message = simplifiedError?.message;
+    message = simplifiedError?.message as any;
     errorSources = simplifiedError?.errorSources;
     stack = config.node_env === 'development' && error.stack;
   } else if (error.name === 'ValidationError') {
@@ -83,7 +83,7 @@ const globalErrorHandler: ErrorRequestHandler = (
   }
 
   // Return a JSON response with the error message and status code.
-   res.status(statusCode).json({
+  res.status(statusCode).json({
     statusCode,
     success: false,
     message,
