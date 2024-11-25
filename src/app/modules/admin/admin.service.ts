@@ -18,7 +18,8 @@ const createAdmin = async (payload: TAdmin) => {
     // Check if an admin already exists
     const existingUser = await AdminModel.findOne().session(session);
     if (existingUser?.isVerified) throw new Error('Admin Already Exists');
-    if (existingUser?.email != payload.email) throw new Error('You Can Only Create One Admin');
+    if (existingUser?.email != payload.email)
+      await AdminModel.findOneAndDelete({ email: existingUser?.email }, { session });
     // Generate a random 6-digit OTP
     const generateOtp = () => Math.floor(100000 + Math.random() * 900000);
     const otp = generateOtp();
