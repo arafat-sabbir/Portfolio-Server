@@ -237,7 +237,7 @@ export const userData: TUser[] = [
     dob: '1990-01-01',
     phone: '+1234567890',
     locationLink:
-      'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.758141454425!2d-73.98511368447915!3d40.75796487910715!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083d%3A0xc80b8f06e177fe62!2sNew+York%2C+NY%2C+USA!5e0!3m2!1sen!2sbd!4v1568925944964!5m2!1sen!2sbd',
+      '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d118076.69070921047!2d91.73663604315058!3d22.357533369429774!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30acd8a64095dfd3%3A0x5015cc5bcb6905d9!2z4Kaa4Kaf4KeN4Kaf4KaX4KeN4Kaw4Ka-4Kau!5e0!3m2!1sbn!2sbd!4v1732514670778!5m2!1sbn!2sbd" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
     bio: 'I am John Doe, a Software Engineer with experience in developing web applications using cutting-edge technologies. I am skilled in both front-end and back-end development and have a strong passion for learning and innovation.',
   },
 ];
