@@ -85,7 +85,7 @@ app.use(express_1.default.static(publicDirPath));
 app.use('/api/v1', routes_1.default);
 // Test route
 const test = (req, res) => {
-    res.send('Hello NewBie!');
+    res.send('Hello From Personal Portfolio Server!');
 };
 app.get('/', test);
 // Global error handler
