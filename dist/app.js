@@ -73,7 +73,11 @@ const requestLogger = (req, res, next) => {
 };
 // Middleware setup
 app.use((0, cors_1.default)({
-    origin: ['https://portfolio.finaltry-innovations.site'],
+    origin: [
+        'https://portfolio.finaltry-innovations.site',
+        'http://localhost:5173',
+        'https://dashboard-finaltry.vercel.app',
+    ],
     credentials: true,
 }));
 app.use(express_1.default.json());

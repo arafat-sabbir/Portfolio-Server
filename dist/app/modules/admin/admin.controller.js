@@ -31,6 +31,11 @@ const loginAdmin = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, voi
     // Call the service method to create a new user and get the result
     const result = yield admin_service_1.adminServices.loginAdmin(req.body);
     // Send a success response with the created resource data
+    res.cookie('accessToken', result.token, {
+        httpOnly: false,
+        maxAge: 30 * 24 * 60 * 60 * 1000,
+        secure: false,
+    });
     (0, sendResponse_1.default)(res, {
         message: 'Log In Successful',
         data: result,

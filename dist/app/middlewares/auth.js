@@ -44,6 +44,7 @@ const AuthorizeRequest = (...roles) => {
             }
         }
         catch (error) {
+            console.log(error);
             throw new AppError_1.default(401, 'Unauthorized Access3');
         }
         next();
