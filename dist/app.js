@@ -78,6 +78,7 @@ app.use((0, cors_1.default)({
         'http://localhost:5173',
         'https://dashboard-finaltry.vercel.app',
         'https://dashboard-finaltry-portfolio.netlify.app',
+        'https://portfolio-dashboard-sabbir.netlify.app',
     ],
     credentials: true,
 }));

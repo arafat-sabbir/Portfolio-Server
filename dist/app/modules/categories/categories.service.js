@@ -14,6 +14,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.categoriesServices = void 0;
 // Import the model
+const AppError_1 = __importDefault(require("../../errors/AppError"));
+const portfolio_model_1 = __importDefault(require("../portfolio/portfolio.model"));
 const categories_model_1 = __importDefault(require("./categories.model"));
 // Service function to create a new categories.
 const createCategories = (data) => __awaiter(void 0, void 0, void 0, function* () {
@@ -34,6 +36,21 @@ const createCategories = (data) => __awaiter(void 0, void 0, void 0, function* (
         return newCategories; // Return the newly created document
     }
 });
+const deleteCategory = (category) => __awaiter(void 0, void 0, void 0, function* () {
+    const portfolioCategoriesExist = yield categories_model_1.default.findOne();
+    if (!portfolioCategoriesExist) {
+        throw new AppError_1.default(404, 'Category Not Found');
+    }
+    if (portfolioCategoriesExist) {
+        // Update the existing document to remove the category
+        yield categories_model_1.default.updateOne({ _id: portfolioCategoriesExist._id }, // Locate the document
+        { $pull: { portfolioCategories: category } } // Remove the category using $pull
+        );
+        yield portfolio_model_1.default.deleteMany({ category: category });
+        return portfolioCategoriesExist; // Return the updated existing document
+    }
+    return null; // Return null if no categories exist
+});
 // Service function to retrieve a single categories by ID.
 const getCategoriesById = (id) => __awaiter(void 0, void 0, void 0, function* () {
     return yield categories_model_1.default.findById(id);
@@ -46,4 +63,5 @@ exports.categoriesServices = {
     createCategories,
     getCategoriesById,
     getAllCategories,
+    deleteCategory,
 };

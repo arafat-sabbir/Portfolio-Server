@@ -47,8 +47,18 @@ const getAllCategories = (0, catchAsync_1.default)((req, res) => __awaiter(void 
         data: result,
     });
 }));
+const deleteCategories = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    // Call the service method to delete the categories by ID and get the result
+    const result = yield categories_service_1.categoriesServices.deleteCategory(req.params.name);
+    // Send a success response with the deleted resource data
+    (0, sendResponse_1.default)(res, {
+        message: 'Categories Deleted Successfully',
+        data: result,
+    });
+}));
 exports.categoriesControllers = {
     createCategories,
     getSingleCategories,
     getAllCategories,
+    deleteCategories
 };
