@@ -80,6 +80,7 @@ const createBlogCategories = (data) => __awaiter(void 0, void 0, void 0, functio
 });
 // Service function to delete a blog category
 const deleteBlogCategory = (category) => __awaiter(void 0, void 0, void 0, function* () {
+    console.log(category, "hello");
     const categoriesExist = yield categories_model_1.default.findOne();
     if (!categoriesExist) {
         throw new AppError_1.default(404, 'Category Not Found');

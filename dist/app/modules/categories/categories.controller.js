@@ -88,6 +88,7 @@ const getAllBlogCategories = (0, catchAsync_1.default)((req, res) => __awaiter(v
     });
 }));
 const deleteBlogCategories = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    console.log(req.params.name, 'hello name');
     // Call the service method to delete the categories by ID and get the result
     const result = yield categories_service_1.categoriesServices.deleteBlogCategory(req.params.name);
     // Send a success response with the deleted resource data
