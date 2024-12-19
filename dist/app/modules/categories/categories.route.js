@@ -16,9 +16,9 @@ router.post('/', (0, validateRequest_1.default)(categories_validation_1.categori
 router.get('/', categories_controller_1.categoriesControllers.getAllPortfolioCategories);
 router.get('/:id', categories_controller_1.categoriesControllers.getSinglePortfolioCategories);
 router.delete('/:name', categories_controller_1.categoriesControllers.deletePortfolioCategories);
-router.post('/blogs', (0, validateRequest_1.default)(categories_validation_1.categoriesValidation.createCategoriesSchema), categories_controller_1.categoriesControllers.createPortfolioCategories);
-router.get('/blog', categories_controller_1.categoriesControllers.getAllPortfolioCategories);
-router.get('/blgos/:id', categories_controller_1.categoriesControllers.getSinglePortfolioCategories);
-router.delete('/blgos/:name', categories_controller_1.categoriesControllers.deletePortfolioCategories);
+router.post('/blogs', (0, validateRequest_1.default)(categories_validation_1.categoriesValidation.createCategoriesSchema), categories_controller_1.categoriesControllers.createBlogCategories);
+router.get('/blogs', categories_controller_1.categoriesControllers.getAllBlogCategories);
+router.get('/blgos/:id', categories_controller_1.categoriesControllers.getSingleBlogCategories);
+router.delete('/blgos/:name', categories_controller_1.categoriesControllers.deleteBlogCategories);
 const categoriesRoutes = router;
 exports.default = categoriesRoutes;
