@@ -7,7 +7,7 @@ const createSkillSchema = zod_1.z.object({
     body: zod_1.z.object({
         skill: zod_1.z.string({ required_error: 'Skill name is required' }),
         level: zod_1.z.string({ required_error: 'Skill level is required' }),
-        photo: zod_1.z.string({ required_error: 'Skill photo is required' }),
+        // photo: z.string({ required_error: 'Skill photo is required' }),
     }),
 });
 const editSkillSchema = zod_1.z.object({
