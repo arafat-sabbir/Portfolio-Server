@@ -59,7 +59,7 @@ const deletePortfolioCategories = (0, catchAsync_1.default)((req, res) => __awai
 // Controller function to handle the creation of a single Categories.
 const createBlogCategories = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
     // Call the service method to create a new categories and get the result
-    const result = yield categories_service_1.categoriesServices.createPortfolioCategories(req.body);
+    const result = yield categories_service_1.categoriesServices.createBlogCategories(req.body);
     // Send a success response with the created resource data
     (0, sendResponse_1.default)(res, {
         message: 'New Categories created Successfully',
@@ -70,7 +70,7 @@ const createBlogCategories = (0, catchAsync_1.default)((req, res) => __awaiter(v
 const getSingleBlogCategories = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { id } = req.params;
     // Call the service method to get the categories by ID and get the result
-    const result = yield categories_service_1.categoriesServices.getPortfolioCategoriesById(id);
+    const result = yield categories_service_1.categoriesServices.getBlogCategoriesById(id);
     // Send a success response with the retrieved resource data
     (0, sendResponse_1.default)(res, {
         message: 'Categories Retrieved Successfully',
@@ -80,7 +80,7 @@ const getSingleBlogCategories = (0, catchAsync_1.default)((req, res) => __awaite
 // Controller function to handle the retrieval of multiple categories.
 const getAllBlogCategories = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
     // Call the service method to get multiple categories based on query parameters and get the result
-    const result = yield categories_service_1.categoriesServices.getAllPortfolioCategories(req.query);
+    const result = yield categories_service_1.categoriesServices.getAllBlogCategories();
     // Send a success response with the retrieved resources data
     (0, sendResponse_1.default)(res, {
         message: 'Categoriess Retrieved Successfully',
@@ -89,7 +89,7 @@ const getAllBlogCategories = (0, catchAsync_1.default)((req, res) => __awaiter(v
 }));
 const deleteBlogCategories = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
     // Call the service method to delete the categories by ID and get the result
-    const result = yield categories_service_1.categoriesServices.deletePortfolioCategory(req.params.name);
+    const result = yield categories_service_1.categoriesServices.deleteBlogCategory(req.params.name);
     // Send a success response with the deleted resource data
     (0, sendResponse_1.default)(res, {
         message: 'Categories Deleted Successfully',
