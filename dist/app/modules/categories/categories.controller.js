@@ -17,9 +17,9 @@ const categories_service_1 = require("./categories.service");
 const catchAsync_1 = __importDefault(require("../../utils/catchAsync"));
 const sendResponse_1 = __importDefault(require("../../utils/sendResponse"));
 // Controller function to handle the creation of a single Categories.
-const createCategories = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
+const createPortfolioCategories = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
     // Call the service method to create a new categories and get the result
-    const result = yield categories_service_1.categoriesServices.createCategories(req.body);
+    const result = yield categories_service_1.categoriesServices.createPortfolioCategories(req.body);
     // Send a success response with the created resource data
     (0, sendResponse_1.default)(res, {
         message: 'New Categories created Successfully',
@@ -27,10 +27,10 @@ const createCategories = (0, catchAsync_1.default)((req, res) => __awaiter(void 
     });
 }));
 // Controller function to handle the retrieval of a single categories by ID.
-const getSingleCategories = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
+const getSinglePortfolioCategories = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { id } = req.params;
     // Call the service method to get the categories by ID and get the result
-    const result = yield categories_service_1.categoriesServices.getCategoriesById(id);
+    const result = yield categories_service_1.categoriesServices.getPortfolioCategoriesById(id);
     // Send a success response with the retrieved resource data
     (0, sendResponse_1.default)(res, {
         message: 'Categories Retrieved Successfully',
@@ -38,18 +38,58 @@ const getSingleCategories = (0, catchAsync_1.default)((req, res) => __awaiter(vo
     });
 }));
 // Controller function to handle the retrieval of multiple categories.
-const getAllCategories = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
+const getAllPortfolioCategories = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
     // Call the service method to get multiple categories based on query parameters and get the result
-    const result = yield categories_service_1.categoriesServices.getAllCategories(req.query);
+    const result = yield categories_service_1.categoriesServices.getAllPortfolioCategories(req.query);
     // Send a success response with the retrieved resources data
     (0, sendResponse_1.default)(res, {
         message: 'Categoriess Retrieved Successfully',
         data: result,
     });
 }));
-const deleteCategories = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
+const deletePortfolioCategories = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
     // Call the service method to delete the categories by ID and get the result
-    const result = yield categories_service_1.categoriesServices.deleteCategory(req.params.name);
+    const result = yield categories_service_1.categoriesServices.deletePortfolioCategory(req.params.name);
+    // Send a success response with the deleted resource data
+    (0, sendResponse_1.default)(res, {
+        message: 'Categories Deleted Successfully',
+        data: result,
+    });
+}));
+// Controller function to handle the creation of a single Categories.
+const createBlogCategories = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    // Call the service method to create a new categories and get the result
+    const result = yield categories_service_1.categoriesServices.createPortfolioCategories(req.body);
+    // Send a success response with the created resource data
+    (0, sendResponse_1.default)(res, {
+        message: 'New Categories created Successfully',
+        data: result,
+    });
+}));
+// Controller function to handle the retrieval of a single categories by ID.
+const getSingleBlogCategories = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const { id } = req.params;
+    // Call the service method to get the categories by ID and get the result
+    const result = yield categories_service_1.categoriesServices.getPortfolioCategoriesById(id);
+    // Send a success response with the retrieved resource data
+    (0, sendResponse_1.default)(res, {
+        message: 'Categories Retrieved Successfully',
+        data: result,
+    });
+}));
+// Controller function to handle the retrieval of multiple categories.
+const getAllBlogCategories = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    // Call the service method to get multiple categories based on query parameters and get the result
+    const result = yield categories_service_1.categoriesServices.getAllPortfolioCategories(req.query);
+    // Send a success response with the retrieved resources data
+    (0, sendResponse_1.default)(res, {
+        message: 'Categoriess Retrieved Successfully',
+        data: result,
+    });
+}));
+const deleteBlogCategories = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    // Call the service method to delete the categories by ID and get the result
+    const result = yield categories_service_1.categoriesServices.deletePortfolioCategory(req.params.name);
     // Send a success response with the deleted resource data
     (0, sendResponse_1.default)(res, {
         message: 'Categories Deleted Successfully',
@@ -57,8 +97,12 @@ const deleteCategories = (0, catchAsync_1.default)((req, res) => __awaiter(void 
     });
 }));
 exports.categoriesControllers = {
-    createCategories,
-    getSingleCategories,
-    getAllCategories,
-    deleteCategories
+    createPortfolioCategories,
+    getSinglePortfolioCategories,
+    getAllPortfolioCategories,
+    deletePortfolioCategories,
+    getAllBlogCategories,
+    deleteBlogCategories,
+    getSingleBlogCategories,
+    createBlogCategories,
 };

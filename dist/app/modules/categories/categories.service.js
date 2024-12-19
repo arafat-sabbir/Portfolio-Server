@@ -18,7 +18,7 @@ const AppError_1 = __importDefault(require("../../errors/AppError"));
 const portfolio_model_1 = __importDefault(require("../portfolio/portfolio.model"));
 const categories_model_1 = __importDefault(require("./categories.model"));
 // Service function to create a new categories.
-const createCategories = (data) => __awaiter(void 0, void 0, void 0, function* () {
+const createPortfolioCategories = (data) => __awaiter(void 0, void 0, void 0, function* () {
     // Check if a category exists in the database
     const portfolioCategoriesExist = yield categories_model_1.default.findOne();
     if (portfolioCategoriesExist) {
@@ -36,7 +36,7 @@ const createCategories = (data) => __awaiter(void 0, void 0, void 0, function* (
         return newCategories; // Return the newly created document
     }
 });
-const deleteCategory = (category) => __awaiter(void 0, void 0, void 0, function* () {
+const deletePortfolioCategory = (category) => __awaiter(void 0, void 0, void 0, function* () {
     const portfolioCategoriesExist = yield categories_model_1.default.findOne();
     if (!portfolioCategoriesExist) {
         throw new AppError_1.default(404, 'Category Not Found');
@@ -52,16 +52,66 @@ const deleteCategory = (category) => __awaiter(void 0, void 0, void 0, function*
     return null; // Return null if no categories exist
 });
 // Service function to retrieve a single categories by ID.
-const getCategoriesById = (id) => __awaiter(void 0, void 0, void 0, function* () {
+const getPortfolioCategoriesById = (id) => __awaiter(void 0, void 0, void 0, function* () {
     return yield categories_model_1.default.findById(id);
 });
 // Service function to retrieve multiple categories based on query parameters.
-const getAllCategories = (query) => __awaiter(void 0, void 0, void 0, function* () {
+const getAllPortfolioCategories = (query) => __awaiter(void 0, void 0, void 0, function* () {
     return yield categories_model_1.default.findOne(query);
 });
+// Service function to create a new blog category
+const createBlogCategories = (data) => __awaiter(void 0, void 0, void 0, function* () {
+    // Check if a blog category exists in the database
+    const categoriesExist = yield categories_model_1.default.findOne();
+    if (categoriesExist) {
+        // Update the existing document to include the new category
+        yield categories_model_1.default.updateOne({ _id: categoriesExist._id }, // Locate the document
+        { $addToSet: { blogCategories: data.category } } // Avoid duplicates using $addToSet
+        );
+        return categoriesExist; // Return the updated existing document
+    }
+    else {
+        // Create a new document with the category
+        const newCategories = yield categories_model_1.default.create({
+            blogCategories: [data.category],
+        });
+        return newCategories; // Return the newly created document
+    }
+});
+// Service function to delete a blog category
+const deleteBlogCategory = (category) => __awaiter(void 0, void 0, void 0, function* () {
+    const categoriesExist = yield categories_model_1.default.findOne();
+    if (!categoriesExist) {
+        throw new AppError_1.default(404, 'Category Not Found');
+    }
+    if (categoriesExist) {
+        // Update the existing document to remove the category
+        yield categories_model_1.default.updateOne({ _id: categoriesExist._id }, // Locate the document
+        { $pull: { blogCategories: category } } // Remove the category using $pull
+        );
+        return categoriesExist; // Return the updated existing document
+    }
+    return null; // Return null if no categories exist
+});
+// Service function to retrieve blog categories by ID
+const getBlogCategoriesById = (id) => __awaiter(void 0, void 0, void 0, function* () {
+    const categoryDocument = yield categories_model_1.default.findById(id);
+    return categoryDocument ? categoryDocument.blogCategories : null;
+});
+// Service function to retrieve all blog categories
+const getAllBlogCategories = () => __awaiter(void 0, void 0, void 0, function* () {
+    const blogCategories = yield categories_model_1.default.findOne();
+    return blogCategories ? blogCategories === null || blogCategories === void 0 ? void 0 : blogCategories.blogCategories : null;
+});
 exports.categoriesServices = {
-    createCategories,
-    getCategoriesById,
-    getAllCategories,
-    deleteCategory,
+    // Portfolio Categories
+    createPortfolioCategories,
+    deletePortfolioCategory,
+    getPortfolioCategoriesById,
+    getAllPortfolioCategories,
+    // Blog Categories
+    createBlogCategories,
+    deleteBlogCategory,
+    getBlogCategoriesById,
+    getAllBlogCategories,
 };

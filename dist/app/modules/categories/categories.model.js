@@ -31,6 +31,10 @@ const CategoriesSchema = new mongoose_1.Schema({
         type: [String],
         required: true,
     },
+    blogCategories: {
+        type: [String],
+        required: true,
+    },
 }, { timestamps: true, versionKey: false });
 // Create the Categories model
 const CategoriesModel = mongoose_1.default.model('Categories', CategoriesSchema);

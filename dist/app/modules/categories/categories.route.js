@@ -12,9 +12,13 @@ const validateRequest_1 = __importDefault(require("../../middlewares/validateReq
 const categories_validation_1 = require("./categories.validation");
 // Initialize router
 const router = (0, express_1.Router)();
-router.post('/', (0, validateRequest_1.default)(categories_validation_1.categoriesValidation.createCategoriesSchema), categories_controller_1.categoriesControllers.createCategories);
-router.get('/', categories_controller_1.categoriesControllers.getAllCategories);
-router.get('/:id', categories_controller_1.categoriesControllers.getSingleCategories);
-router.delete('/:name', categories_controller_1.categoriesControllers.deleteCategories);
+router.post('/', (0, validateRequest_1.default)(categories_validation_1.categoriesValidation.createCategoriesSchema), categories_controller_1.categoriesControllers.createPortfolioCategories);
+router.get('/', categories_controller_1.categoriesControllers.getAllPortfolioCategories);
+router.get('/:id', categories_controller_1.categoriesControllers.getSinglePortfolioCategories);
+router.delete('/:name', categories_controller_1.categoriesControllers.deletePortfolioCategories);
+router.post('/blogs', (0, validateRequest_1.default)(categories_validation_1.categoriesValidation.createCategoriesSchema), categories_controller_1.categoriesControllers.createPortfolioCategories);
+router.get('/blog', categories_controller_1.categoriesControllers.getAllPortfolioCategories);
+router.get('/blgos/:id', categories_controller_1.categoriesControllers.getSinglePortfolioCategories);
+router.delete('/blgos/:name', categories_controller_1.categoriesControllers.deletePortfolioCategories);
 const categoriesRoutes = router;
 exports.default = categoriesRoutes;
